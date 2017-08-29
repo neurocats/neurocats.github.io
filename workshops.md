@@ -4,7 +4,7 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Introduction to the Blockchain** by Frank Selensky  
+- **Introduction to Blockchain Technology** by Frank Selensky  
 to: Research, Development & Management group  
 September 2017
 - **Introduction to the Recurrent Neural Networks** by Wiebke Günther  
