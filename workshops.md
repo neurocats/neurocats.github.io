@@ -8,7 +8,7 @@ permalink: /workshops/
 to: Research, Development & Management group  
 September 2017
 - **Introduction to the Recurrent Neural Networks** by Wiebke Günther  
-to: Research, Development group  
+to: Research & Development group  
 September 2017
 
 
