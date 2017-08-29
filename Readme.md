@@ -1,4 +1,2 @@
 # My blog
-
-bla bla
-
+blub blub
