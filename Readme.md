@@ -8,3 +8,8 @@ Have a look: [Neurocat Blog](neurocats.github.io)
 
 ## Questions?
 Contact: miau@neurocat.ai
+
+
+
+## Acknowledgement
+Thanks to Karpathy for providing such a nice open blog framework.
