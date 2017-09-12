@@ -4,9 +4,6 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Introduction to Blockchain Technology** by Frank Selensky  
-to: Research, Development & Management group  
-04/09/17
 - **Introduction to the Recurrent Neural Networks** by Wiebke Günther  
 to: Research & Development group  
 September 2017
@@ -16,6 +13,9 @@ Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
 
 ### Past Workshops:
 
+- **Introduction to Blockchain Technology** by Frank Selensky  
+to: Research, Development & Management group  
+12/09/17
 - **Introduction to Reinforcement Learning** by Felix Assion  
 to: Research, Development & Management group  
 18/08/17
