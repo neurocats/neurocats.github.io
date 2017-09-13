@@ -12,10 +12,10 @@ to: Research & Development group
 22/09/17
 - **Policy Gradient Methods** by Felix Assion  
 to: Research & Development group  
-October 2017
+05/10/17
 - **Prioritized Experience Replay** by Florens Greßner  
 to: Research group  
-October 2017
+09/10/17
 
 
 Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau@neurocat.ai).
