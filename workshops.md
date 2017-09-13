@@ -4,9 +4,12 @@ title: Workshops
 permalink: /workshops/
 ---
 
+- **Introduction to Smart Contracts** by Frank Selensky  
+to: Research & Development group  
+22/09/17
 - **Introduction to the Recurrent Neural Networks** by Wiebke Günther  
 to: Research & Development group  
-September 2017
+22/09/17
 
 
 Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
@@ -16,8 +19,14 @@ Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
 - **Introduction to Blockchain Technology** by Frank Selensky  
 to: Research, Development & Management group  
 12/09/17
+- **Introduction to GAN Networks** by Oswald Berthold  
+to: Research, Development group  
+05/09/17
+- **Introduction to Bayesian Networks** by Oswald Berthold  
+to: Research, Development group  
+29/08/17
 - **Introduction to Reinforcement Learning** by Felix Assion  
-to: Research, Development & Management group  
+to: Research, Development group  
 18/08/17
 - **Introduction to tensorflow** by Florens Greßner  
 to: Research & Development group  
