@@ -18,7 +18,7 @@ to: Research group
 October 2017
 
 
-Feel free to Sign in for a workshop by contacting miau@neurocat.ai.
+Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau@neurocat.ai).
 
 ### Past Workshops:
 
