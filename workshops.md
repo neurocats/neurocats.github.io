@@ -10,6 +10,9 @@ to: Research & Development group
 - **Prioritized Experience Replay** by Florens Greßner  
 to: Research group  
 09/10/17
+- **Neural Turing Machines** by Wiebke Günther  
+to: Research group  
+October 2017
 
 
 Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau@neurocat.ai).
