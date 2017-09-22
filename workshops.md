@@ -11,7 +11,7 @@ to: Research & Development group
 to: Research group  
 09/10/17
 - **Neural Turing Machines** by Wiebke Günther  
-to: Research group  
+to: Research group & Development Group  
 October 2017
 
 
