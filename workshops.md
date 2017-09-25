@@ -7,11 +7,14 @@ permalink: /workshops/
 - **Policy Gradient Methods** by Felix Assion  
 to: Research & Development group  
 27/09/17
+- **Introduction to Evolutionary Algorithms** by Oswald Berthold  
+to: Development group  
+09/10/17
 - **Prioritized Experience Replay** by Florens Greßner  
 to: Research group  
 09/10/17
 - **Neural Turing Machines** by Wiebke Günther  
-to: Research group & Development Group  
+to: Research group & Development group  
 October 2017
 
 
