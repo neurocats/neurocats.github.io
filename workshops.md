@@ -6,7 +6,7 @@ permalink: /workshops/
 
 - **Policy Gradient Methods** by Felix Assion  
 to: Research & Development group  
-05/10/17
+27/09/17
 - **Prioritized Experience Replay** by Florens Greßner  
 to: Research group  
 09/10/17
