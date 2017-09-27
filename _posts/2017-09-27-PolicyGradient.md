@@ -77,7 +77,7 @@ Please, note that $\sum _{t=t'}^{T-1} \gamma^{t-t'} r_t^i$ is basically an estim
  
  This implies that $Var(X-B)= Var(X)+Var(B)-2Cov(X,B) < Var(X)$ and hence, one can simply try to estimate $X-B$ instead of $X$ directly. Due to condition (1) this random variable does not change the desired expected value, but has a reduced variance. Now, back to our situation. With a few rather easy steps (comparable to those above), one can show that for any function $b: \mathcal{S} \rightarrow \mathbb{R}$ one has $\mathbb{E}_{\pi _{\theta}} [\nabla _{\theta} log(\pi _{\theta} (a_t \mid s_t)) b(s_t)] = 0$ and thus, condition (1) is always fulfilled:
  
- $$ \mathbb{E} _{\pi _{\theta}} [ \sum _{t'=0}^{T-1} \gamma^{t'} \nabla _{\theta} log(\pi _{\theta} (a _{t'} \mid s _{t'})) \sum _{t=t'}^{T-1} \gamma^{t-t'} \mathcal{R}_t ] = \mathbb{E} _{\pi _{\theta}} [ \sum _{t'=0}^{T-1} \gamma^{t'} \nabla _{\theta} log(\pi _{\theta} (a _{t'} \mid s _{t'})) ( \sum _{t=t'}^{T-1} \gamma^{t-t'} \mathcal{R}_t - b(s_t) )]$$ 
+ $$ \mathbb{E} _{\pi _{\theta}} [ \sum _{t'=0}^{T-1} \gamma^{t'} \nabla _{\theta} log(\pi _{\theta} (a _{t'} \mid s _{t'})) \sum _{t=t'}^{T-1} \gamma^{t-t'} \mathcal{R}_t ] = \mathbb{E} _{\pi _{\theta}} [ \sum _{t'=0}^{T-1} \gamma^{t'} \nabla _{\theta} log(\pi _{\theta} (a _{t'} \mid s _{t'})) ( \sum _{t=t'}^{T-1} \gamma^{t-t'} \mathcal{R}_t - b(s _{t'}) )]$$ 
  
 The crucial point here is to use the fact that the baseline function $b$ does not depend on the action space $\mathcal{A}$. In practice, the baseline function $b$ is often equal to the state-value function, i.e. the expected return following policy $\pi _{\theta}$ from the given state until terminal time step $T$. 
 
