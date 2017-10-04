@@ -6,7 +6,10 @@ permalink: /workshops/
 
 - **Prioritized Experience Replay** by Florens Greßner  
 Research group  
-09/10/17
+10/10/17
+- **Introduction to Evolutionary Algorithms** by Oswald Berthold  
+Development group  
+11/10/17
 - **Neural Turing Machines** by Wiebke Günther  
 Research group & Development group  
 October 2017
@@ -16,9 +19,6 @@ Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau
 
 ### Past Workshops:
 
-- **Introduction to Evolutionary Algorithms** by Oswald Berthold  
-Development group  
-09/10/17
 - **Policy Gradient Methods** by Felix Assion  
 Research & Development group  
 27/09/17
