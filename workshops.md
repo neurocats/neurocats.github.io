@@ -4,11 +4,14 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Introduction to Evolutionary Algorithms** by Oswald Berthold  
+- **Introduction to Evolutionary Algorithms**  
+Oswald Berthold  
 10/10/17
-- **Prioritized Experience Replay** by Florens Greßner  
+- **Prioritized Experience Replay**  
+Florens Greßner  
 11/10/17
-- **Neural Turing Machines** by Wiebke Günther  
+- **Neural Turing Machines**  
+Wiebke Günther  
 16/10/17
 
 
@@ -16,19 +19,27 @@ Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau
 
 ### Past Workshops:
 
-- **Policy Gradient Methods** by Felix Assion  
+- **Policy Gradient Methods**  
+Felix Assion  
 27/09/17
-- **Introduction to the Recurrent Neural Networks** by Wiebke Günther  
+- **Introduction to the Recurrent Neural Networks**  
+Wiebke Günther  
 22/09/17
-- **Introduction to Smart Contracts** by Frank Selensky   
+- **Introduction to Smart Contracts**  
+Frank Selensky   
 18/09/17
-- **Introduction to Blockchain Technology** by Frank Selensky  
+- **Introduction to Blockchain Technology**  
+Frank Selensky  
 12/09/17
-- **Introduction to GAN Networks** by Oswald Berthold  
+- **Introduction to GAN Networks**  
+Oswald Berthold  
 05/09/17
-- **Introduction to Bayesian Networks** by Oswald Berthold  
+- **Introduction to Bayesian Networks**  
+Oswald Berthold  
 29/08/17
-- **Introduction to Reinforcement Learning** by Felix Assion  
+- **Introduction to Reinforcement Learning**  
+Felix Assion  
 18/08/17
-- **Introduction to Tensorflow** by Florens Greßner  
+- **Introduction to Tensorflow**  
+Florens Greßner  
 17/08/17
