@@ -9,7 +9,7 @@ permalink: /workshops/
 - **Prioritized Experience Replay** by Florens Greßner  
 11/10/17
 - **Neural Turing Machines** by Wiebke Günther  
-17/10/17
+16/10/17
 
 
 Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau@neurocat.ai).
