@@ -1,61 +1,65 @@
----
-layout: post
-comments: true
-title:  "Introduction to Bayesian networks Pt. 1"
-excerpt: "Oswald Berthold - A smooth introduction to Bayesian networks"
-date:   2017-08-24
-mathjax: true
----
 
 # Table of Contents
 
-1.  [Introduction](#orgb6be35f)
-    1.  [Graphical models](#orgaf6b925)
-    2.  [Graphical models](#orgeabae00)
-2.  [Representation](#orgf04fce7)
-    1.  [Graphical models: Representation](#orga73eccb)
-    2.  [Graphical models: Representation](#orgf74365f)
-    3.  [Graphical models: Bayesian networks](#org7f17a30)
-    4.  [Graphical models: Bayesian networks](#orgd3be1d1)
-    5.  [Graphical models examples: PCA, ICA, &#x2026;](#orgfc8298f)
-    6.  [Graphical models examples: PCA, ICA, &#x2026;](#orgb47cf57)
-    7.  [Graphical models examples: PCA, ICA, &#x2026;](#org5eb7865)
-    8.  [Graphical models examples: Temporal models](#orgeb8bb22)
-    9.  [Graphical models examples: Temporal models](#orgf169532)
-    10. [Graphical models examples: Undirected graphs](#org77cf048)
-    11. [Graphical models summary](#org08fef05)
-3.  [Inference](#org8545e20)
-    1.  [Graphical models: Inference](#org9b922d7)
-    2.  [Graphical models: Inference](#org3d2dcb1)
-4.  [Learning](#org4c626f2)
-    1.  [Graphical models: Learning](#orgef8c252)
-5.  [Action and decisions](#org6dcdc41)
-    1.  [Making decisions](#org55926e7)
-6.  [Realworld models](#org58b2d46)
-    1.  [Generative models](#orgac014f3)
-    2.  [Boltzmann machine](#org56f94cb)
-    3.  [Dynamic bayesian networks](#orgc268406)
-    4.  [Variational autoencoder](#orgf65adb3)
-    5.  [Mixture of experts](#orgd248cff)
-7.  [References](#org391aba4)
-    1.  [Sources](#org8118fbb)
-    2.  [Online](#org0790a90)
-    3.  [Software environments](#orgb464025)
+1.  [Introduction](#org7da000f)
+    1.  [Preliminaries](#org686636b)
+    2.  [Graphical models](#org1652d7c)
+    3.  [Graphical models](#org45b0438)
+2.  [Representation](#orgcf0fe5d)
+    1.  [Graphical models: Representation](#org628490c)
+    2.  [Graphical models: Representation](#org71ab20a)
+    3.  [Graphical models: Bayesian networks](#org43814c0)
+    4.  [Graphical models: Bayesian networks](#org9061324)
+    5.  [Graphical models examples: PCA, ICA, &#x2026;](#orgbb5638d)
+    6.  [Graphical models examples: PCA, ICA, &#x2026;](#org1b499a5)
+    7.  [Graphical models examples: PCA, ICA, &#x2026;](#org79c3351)
+    8.  [Graphical models examples: Temporal models](#org9f1638a)
+    9.  [Graphical models examples: Temporal models](#org4002512)
+    10. [Graphical models examples: Undirected graphs](#orged454a9)
+    11. [Graphical models summary](#org81baad2)
+3.  [Inference](#org50e630f)
+    1.  [Graphical models: Inference](#org7ab6ac8)
+    2.  [Graphical models: Inference](#org7bf516c)
+4.  [Learning](#orgb7fc603)
+    1.  [Graphical models: Learning](#org61e529d)
+5.  [Action and decisions](#orgbebf2b8)
+    1.  [Making decisions](#org0aac30e)
+6.  [Realworld models](#orgcd0d282)
+    1.  [Generative models](#orgec26ede)
+    2.  [Boltzmann machine](#org0fe6f89)
+    3.  [Dynamic bayesian networks](#org0b032dc)
+    4.  [Variational autoencoder](#org9ba1800)
+    5.  [Mixture of experts](#orge507284)
+7.  [References](#org66607f8)
+    1.  [Sources](#org82e71be)
+    2.  [Online](#orge0cc074)
+    3.  [Software environments](#orgaccc3cb)
 
 
 
-<a id="orgb6be35f"></a>
+<a id="org7da000f"></a>
 
 # Introduction
 
 
-<a id="orgaf6b925"></a>
+<a id="org686636b"></a>
+
+## Preliminaries
+
+\mypara{Modelling}Building models is a main activity within science and the models
+surviving the current battery of tests are the main output of any
+scientific discipline.
+
+\mypara{Machine learning}Mathematical and computational models
+
+\mypara{Artificial intelligence}Bla &#x2026;
+
+
+<a id="org1652d7c"></a>
 
 ## Graphical models
 
-(Basically all Murphy98/01/02 material)   
-
-A marriage between probability theory and graph theory  
+Graphical models are a marriage between probability theory and graph theory.  
 
 Dealing with *uncertainty* and *complexity*
 
@@ -71,7 +75,7 @@ Probabilistic part allows to connect modules among themselves and to
 connect modules to data (inference, learning, &#x2026;).  
 
 
-<a id="orgeabae00"></a>
+<a id="org45b0438"></a>
 
 ## Graphical models
 
@@ -85,12 +89,12 @@ models, Kalman filters and Ising models.
 Topics: Representation, inference, learning, decision theory, applications
 
 
-<a id="orgf04fce7"></a>
+<a id="orgcf0fe5d"></a>
 
 # Representation
 
 
-<a id="orga73eccb"></a>
+<a id="org628490c"></a>
 
 ## Graphical models: Representation
 
@@ -105,7 +109,7 @@ variables full density needs \(\mathcal{O}(2^N)\) parameters, graphical
 repr may need much less.
 
 
-<a id="orgf74365f"></a>
+<a id="org71ab20a"></a>
 
 ## Graphical models: Representation
 
@@ -120,7 +124,7 @@ Bayesian networks are also known as belief network, *generative models*, causal
 models, &#x2026;
 
 
-<a id="org7f17a30"></a>
+<a id="org43814c0"></a>
 
 ## Graphical models: Bayesian networks
 
@@ -138,7 +142,7 @@ for inference.
     with posterior \(y\) and data \(x\) or parameters \(\theta\) and data \(x\)
 
 
-<a id="orgd3be1d1"></a>
+<a id="org9061324"></a>
 
 ## Graphical models: Bayesian networks
 
@@ -150,7 +154,7 @@ for inference.
 \end{figure}
 
 
-<a id="orgfc8298f"></a>
+<a id="orgbb5638d"></a>
 
 ## Graphical models examples: PCA, ICA, &#x2026;
 
@@ -167,17 +171,17 @@ Mixtures of factor analysis and independent factor analysis with IFA
 relating to ICA.
 
 
-<a id="orgb47cf57"></a>
+<a id="org1b499a5"></a>
 
 ## Graphical models examples: PCA, ICA, &#x2026;
 
 
-<a id="org5eb7865"></a>
+<a id="org79c3351"></a>
 
 ## Graphical models examples: PCA, ICA, &#x2026;
 
 
-<a id="orgeb8bb22"></a>
+<a id="org9f1638a"></a>
 
 ## Graphical models examples: Temporal models
 
@@ -191,7 +195,7 @@ P(Q, Y) = P(Q_1) P(Y_1 | Q_1) \Pi_{t=2}^4 P(Q_t | Q_{t-1}) P(Y_t | Q_t)
 \]
 
 
-<a id="orgf169532"></a>
+<a id="org4002512"></a>
 
 ## Graphical models examples: Temporal models
 
@@ -204,24 +208,24 @@ P(Y_{t+1} = y_{t+1} | X_t = x, U_t = u) & = & \mathcal{N}(y_{t+1}; Cx + Du, R) \
 \end{array}\]
 
 
-<a id="org77cf048"></a>
+<a id="orged454a9"></a>
 
 ## Graphical models examples: Undirected graphs
 
 Markov Random Field, e.g. Ising model, graph is a homogenous grid
 
 
-<a id="org08fef05"></a>
+<a id="org81baad2"></a>
 
 ## Graphical models summary
 
 
-<a id="org8545e20"></a>
+<a id="org50e630f"></a>
 
 # Inference
 
 
-<a id="org9b922d7"></a>
+<a id="org7ab6ac8"></a>
 
 ## Graphical models: Inference
 
@@ -236,7 +240,7 @@ Exact inference: variable elimination (driving in independent sums),
 dynamic programming. Running time potentially very bad, thus approximations.  
 
 
-<a id="org3d2dcb1"></a>
+<a id="org7bf516c"></a>
 
 ## Graphical models: Inference
 
@@ -251,12 +255,12 @@ choosing Q minimizing the Kullback-Leibler divergence
 \(D_{KL}(Q||P)\).  
 
 
-<a id="org4c626f2"></a>
+<a id="orgb7fc603"></a>
 
 # Learning
 
 
-<a id="orgef8c252"></a>
+<a id="org61e529d"></a>
 
 ## Graphical models: Learning
 
@@ -277,24 +281,24 @@ unknown & Local search & Structural EM \\
 Known structure - full observability; Known structure - partial observability; Unknown structure - full observability; Unknown structure - partial observability (POMDP)  
 
 
-<a id="org6dcdc41"></a>
+<a id="orgbebf2b8"></a>
 
 # Action and decisions
 
 
-<a id="org55926e7"></a>
+<a id="org0aac30e"></a>
 
 ## Making decisions
 
 Attach utility to variables as in “Decision Theory = Probability Theory + Utility Theory”
 
 
-<a id="org58b2d46"></a>
+<a id="orgcd0d282"></a>
 
 # Realworld models
 
 
-<a id="orgac014f3"></a>
+<a id="orgec26ede"></a>
 
 ## Generative models
 
@@ -303,7 +307,7 @@ densities makes the model *generative*, the model can be sampled with
 respect to prediction time conditioning.
 
 
-<a id="org56f94cb"></a>
+<a id="org0fe6f89"></a>
 
 ## Boltzmann machine
 
@@ -311,7 +315,7 @@ respect to prediction time conditioning.
 -   no temporal sequence order
 
 
-<a id="orgc268406"></a>
+<a id="org0b032dc"></a>
 
 ## Dynamic bayesian networks
 
@@ -321,12 +325,12 @@ representation as a DBN
 Consider: autoencoder/hidden space sequence modelling/autoencoder
 
 
-<a id="orgf65adb3"></a>
+<a id="org9ba1800"></a>
 
 ## Variational autoencoder
 
 
-<a id="orgd248cff"></a>
+<a id="orge507284"></a>
 
 ## Mixture of experts
 
@@ -335,32 +339,36 @@ Gaussian experts: gaussian mixture density model
 Pg. 7 Murphy 2001 Intro do graphical models / BNs
 
 
-<a id="org391aba4"></a>
+<a id="org66607f8"></a>
 
 # References
 
 
-<a id="org8118fbb"></a>
+<a id="org82e71be"></a>
 
 ## Sources
 
 \scriptsize
 
--   Murphy, 1998, A Brief Introduction to Graphical Models and Bayesian
-    Networks, <https://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html>
--   Murphy, 2001, An introduction to graphical models,
-    <https://www.cs.ubc.ca/~murphyk/Papers/intro_gm.pdf>
--   Murphy, 2002, Dynamic Bayesian Networks: Representation, inference,
-    learning,
+1.  Main sources
 
--   Koller & Friedmann, 2009, Probabilistic graphical models, MIT Press
--   Haykin, 2013, Neural networks and learning machines (3rd Ed.),
-    Pearson Education
--   Russell & Norvig, 2003, Artificial intelligence - A modern
-    approach, Pearson Education
+    -   Murphy, 1998, A Brief Introduction to Graphical Models and Bayesian
+        Networks, <https://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html>
+    -   Murphy, 2001, An introduction to graphical models,
+        <https://www.cs.ubc.ca/~murphyk/Papers/intro_gm.pdf>
+    -   Murphy, 2002, Dynamic Bayesian Networks: Representation, inference,
+        learning,
+
+2.  Additional sources
+
+    -   Koller & Friedmann, 2009, Probabilistic graphical models, MIT Press
+    -   Haykin, 2013, Neural networks and learning machines (3rd Ed.),
+        Pearson Education
+    -   Russell & Norvig, 2003, Artificial intelligence - A modern
+        approach, Pearson Education
 
 
-<a id="org0790a90"></a>
+<a id="orge0cc074"></a>
 
 ## Online
 
@@ -370,7 +378,7 @@ Pg. 7 Murphy 2001 Intro do graphical models / BNs
 -   <https://en.wikipedia.org/wiki/Variational_Bayesian_methods>
 
 
-<a id="orgb464025"></a>
+<a id="orgaccc3cb"></a>
 
 ## Software environments
 
