@@ -3,7 +3,7 @@ layout: post
 comments: true
 title:  "Introduction to Tensorflow - 03 Neural Network"
 excerpt: "Florens Greßner - While showing how to build to a simple neural 
-network with TensorFlow I want to give the reader a playful handling with 
+network with TensorFlow I want to give the reader a playful handling of 
 namescopes and show how to make sense of your weight evolution with 
 histograms."
 date:   2017-08-14
