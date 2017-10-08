@@ -23,7 +23,7 @@ Let's start right away.
 ## Code
 First, we obviously have to import TensorFlow and NumPy. Additionally, we will
 use matplotlib to see how well we approximated sinus by comparing the outcome
-of the network with the original function visually.
+of the network to the original function visually.
 
 ```python
 import tensorflow as tf
@@ -168,7 +168,7 @@ Let's see what we have build:
 
 Looks nice, it compares the output with the label and calculates the 
 euclidean distance. It also calculates a mean for two reasons. First, we want
-to have scalar values for the summary of the lossfunction. Second, remember
+to have scalar values for the summary of the loss function. Second, remember
 that the placeholders for `x` and `y` are very flexible and could evaluate 
 multiple instances of the data set in one run.
 
@@ -188,7 +188,7 @@ automatically adapts the variables that influence the outcome via
 backpropagation. In the last lesson we learned that TensorFlow can automatically
 calculate gradients. This is way more exciting.  
 You can also decide which variables should be learnable and which not. But we won't 
-get into detail about this since  it would be too much for this tutorial.
+go into detail about this since it would be too much for this tutorial.
 
 ### Computation
 Before we start the TensorFlow session let us get over and done with the bureaucracy first.
@@ -238,7 +238,7 @@ summaries that we can view here:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss_tb.png)
 
-We are also creating histograms to measure the weights:
+We also created histograms to measure the weights:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_hist.png)
 
@@ -246,15 +246,15 @@ These can be very helpful for debugging your model. There is no theory
 behind it. However, if you see that all your weights are zero, maybe you made
 a wrong initialization. If you notice that your bias or weights are jumping 
 around without convergence, maybe you took not enough or too small layers. You 
-have to develop a feeling for how they should look like. Start with easy 
-models and play around to get bigger.
+have to develop a feeling for what they should look like. Start with easy 
+models, play around a bit and slowly increase the size of your models.
 
 ### Inference
-Now we want to see how the trained model is doing with its task. Here we 
-basically have to feed the computation graph with x values and compare the 
-labels in a easy, understandable way. Note that the following is still in 
+Now we want to see how the trained model is doing regarding its task. Here we 
+basically have to feed the computation graph with x-values and compare the output to the
+labels in an easy, understandable way. Note that the following is still done in 
 the same session. Otherwise the variables wouldn't be saved. Advanced saving
-and restoring we will see in the next tutorial.
+and restoring will be the topic of our next tutorial.
 ```python
     # inference
     # check if everything worked out fine by visualizing equidistant testpoints
@@ -274,9 +274,9 @@ ax1.set_title("Sinus")
 ax1.grid(True)
 plt.show()
 ```
-Like you can see we are just feeding out `x` with `x_data`, no labels needed
+As you can see we are just feeding our `x` with `x_data`, no labels needed
 this time. The validation set contains 1000 equidistant labeled sinus values. 
-Note: we never actually trained on that set. Before we randomly took our 
+Note: we never actually trained on that set before we randomly made our 
 choice. The comparison with matplotlib looks like that:
 
 ![f](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_plt.png)
