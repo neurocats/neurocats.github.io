@@ -10,20 +10,20 @@ hard_wrap: false
 
 ## Table of Contents ##
 
-1.  [Overview](#org8dc7bda)
-2.  [Core algorithm](#org45723a5)
-3.  [Filling in the details](#org37c8558)
-4.  [Main types of evolutionary algorithms](#org07cc1db)
-5.  [Advanced techniques](#org493f0c4)
-6.  [Examples](#org006abaf)
-7.  [Subfields](#orgaabcf12)
-8.  [Relations to other fields](#org42aa04b)
-9.  [References](#orga02698b)
+1.  [Overview](#orgb18a9a7)
+2.  [Core algorithm](#orgbe0fc40)
+3.  [Filling in the details](#org7c5fc0f)
+4.  [Main types of evolutionary algorithms](#org5d6c9d0)
+5.  [Advanced techniques](#orgad445ca)
+6.  [Examples](#org361d9a9)
+7.  [Subfields](#org6c8297e)
+8.  [Relations to other fields](#orgc9b4a30)
+9.  [References](#org266753d)
 
 <span style="color:red">WARNING: I will have to do the graphics on the board.</span>  
 
 
-<a id="org8dc7bda"></a>
+<a id="orgb18a9a7"></a>
 
 ## Overview ##
 
@@ -32,7 +32,7 @@ Evolutionary algorithms (EAs) are a family of bioinspired algorithms <sup><a id=
 Why do we want to model natural evolution? Because obviously it is a powerful search technique. We would like to replicate this functionality and apply it to our own difficult search and optimization problems.  
 
 
-<a id="org45723a5"></a>
+<a id="orgbe0fc40"></a>
 
 ## Core algorithm ##
 
@@ -56,7 +56,7 @@ with environment $e$, population $p$, fitness $f$, operators $o$ and some genera
 Let's step through the algorithm line by line. Line 2 initializes the components, with p\_ some temporary memory. Line 3 then iterates the following block for a maximum number of iterations. In line 5 an individual is evaluated in the environment and its fitness computed, which is done for each member of the population in line 4. Line 6 creates a new population by sampling pairs of last generation individuals weighted by their fitness in line 7 and computing a new individual from the pair using the genetic operators in line 8. Line 9 updates the overall statistics and line 10 replaces the old population with a new one and jumps back to line 4.  
 
 
-<a id="org37c8558"></a>
+<a id="org7c5fc0f"></a>
 
 ## Filling in the details ##
 
@@ -98,7 +98,7 @@ Even a simple EA quickly accumulates many hyperparameters like population size, 
 The main tools for choosing hyperparameters are defaults, empirical estimates, first principles, or optimization. For example, the statistics $s$ can be used to modulate hyperparameters like mutation rate, recombination rules, or fitness weights. In addition, $s$ is the basis for graphical analyses of the experiment.  
 
 
-<a id="org07cc1db"></a>
+<a id="org5d6c9d0"></a>
 
 ## Main types of evolutionary algorithms ##
 
@@ -111,7 +111,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
 *Genetic programming* is slightly different and includes an implicit layer of a developmental encoding. In GP the genome encodes a computation graph and the algorithm explores the space of a family of programs which can bump the expressive power of the genome by oom.  
 
 
-<a id="org493f0c4"></a>
+<a id="orgad445ca"></a>
 
 ## Advanced techniques ##
 
@@ -125,10 +125,11 @@ There are a few basic types of EAs which are distinguished by the type of genome
 -   Genetic regulatory pathways
 
 
-<a id="org006abaf"></a>
+<a id="org361d9a9"></a>
 
 ## Examples ##
 
+-   pathnet, fernando (!!!)
 -   blind watchmaker, Dawkins
 -   creatures, Karl Sims
 -   picbreeder, Stanley
@@ -146,7 +147,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
 -   Neuroevolution, evol. optim. of quadrotor PID params, evolvable hardware fpga, complexity search / evoplast
 
 
-<a id="orgaabcf12"></a>
+<a id="org6c8297e"></a>
 
 ## Subfields ##
 
@@ -157,14 +158,14 @@ There are a few basic types of EAs which are distinguished by the type of genome
 -   Theory of evolution
 
 
-<a id="org42aa04b"></a>
+<a id="orgc9b4a30"></a>
 
 ## Relations to other fields ##
 
 Evolutionary methods are closely linked with several other families of computational methods. For example, EAs can be framed and understood in terms of stochastic optimization, black-box optimization, particle based methods, or policy search by PG or CACLA / EH aka "cling to the best you you've seen and search around there".  
 
 
-<a id="orga02698b"></a>
+<a id="org266753d"></a>
 
 ## References ##
 
