@@ -1,0 +1,182 @@
+---
+layout: post
+comments: true
+title:  "Introduction to evolutionary algorithms"
+excerpt: "Oswald Berthold - Brief introduction to evolutionary algorithms"
+date:   2017-10-08
+mathjax: true
+hard_wrap: false
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc825fbc">1. Overview</a></li>
+<li><a href="#org35c880b">2. Core algorithm</a></li>
+<li><a href="#orgca186fc">3. Filling in the details</a></li>
+<li><a href="#org80fddad">4. Main types of EA</a></li>
+<li><a href="#org853c5d0">5. Advanced techniques</a></li>
+<li><a href="#org6646240">6. Examples</a></li>
+<li><a href="#orgbb34da0">7. The field</a></li>
+<li><a href="#org97200d6">8. Relations to other fields</a></li>
+<li><a href="#org057922b">9. References</a></li>
+</ul>
+</div>
+</div>
+<span style="color:red">WARNING: I will have to do the graphics on the board.</span>  
+
+
+<a id="orgc825fbc"></a>
+
+## Overview ##
+
+Evolutionary algorithms (EAs) are a family of bioinspired algorithms <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> that generalize various techniques invented some time between 1930 and the 1960s. EAs have been in widespread use in science, technology, and art since, and are still considered state of the art in many problems in optimization, machine learning, robotics, or artificial life. There is a large community driving to expand the field with >6000 authors counted in 2005 \cite{Cotta2007}. One major conference is GECCO - The Genetic and Evolutionary Computation Conference <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>, with 13 tracks and 180 full papers in 2017.  
+
+Why do we want to model natural evolution? Because obviously it is a powerful search technique. We would like to replicate this functionality and apply it to our own difficult search and optimization problems.  
+
+
+<a id="org35c880b"></a>
+
+## Core algorithm ##
+
+In (Floreano & Mattiussi, 2008) the four pillars of evolutionary theory are *population*, *diversity*, *heredity*, and *selection*. From this, a simple mathematical model of natural evolution is a tuple  
+
+$$ \begin{equation} \text{EA} = (e, p, f, o, s) \end{equation} $$  
+
+with environment $e$, population $p$, fitness $f$, operators $o$ and some generation statistics $g$. A minimal algorithm for improving the performance of $p$ with respect to environment and fitness $f(p, e)$ based on the model (1) looks like this:  
+
+    1 evolutionary_algorithm:
+    2   initialize e, p, f, o, s, p_
+    3   do min(maximum iterations, forever)
+    4     for each individual i in p
+    5       compute fitness f_i of i in e
+    6     for each slot i_ in p_
+    7       randomly select individuals i,j from p with probability weighted by fitness 
+    8       apply operators o to pair and store results in slot
+    9     store entire state in s
+    10    update p <- p_
+
+Let's step through the algorithm line by line. Line 2 initializes the components, with p\_ some temporary memory. Line 3 then iterates the following block for a maximum number of iterations. In line 5 an individual is evaluated in the environment and its fitness computed, which is done for each member of the population in line 4. Line 6 creates a new population by sampling pairs of last generation individuals weighted by their fitness in line 7 and computing a new individual from the pair using the genetic operators in line 8. Line 9 updates the overall statistics and line 10 replaces the old population with a new one and jumps back to line 4.  
+
+
+<a id="orgca186fc"></a>
+
+## Filling in the details ##
+
+How and why should this work?  
+
+*Individuals* represent candidate solutions to the problem we would like to solve. They usually consist of a *genotype* and a *phenotype*. The genotype can be a string of bits, reals, or a more complex structure like a nested list or a program trees.  
+
+Usually, the fitness cannot be evaluated directly on the genotype but is translated first into a corresponding phenotype. The phenotype is then put into the environment of the problem and is evaluated by being allowed an episode of 'doing its thing'.  
+
+The genotypic encoding and the mapping from genotype to phenotype are essential parameters in an EA. For example when optimizing a function, the genotype can directly encode the argument at which the function should be evaluated. When tuning a controller in a dynamic simulation, the genotype might just encode the controller's parameters. For evaluation the parameterized controller needs to be simulated on the system for a given amount of time in order to compute a meaningful fitness.  
+
+The *population* is a list of individuals and its size is another important parameter controlling diversity and convergence.  
+
+
+<a id="orgeeba889"></a>
+
+### Environment ###
+
+The environment takes an individual $p_i$, one of the members of $p$, as an input and responds with an episode of data generated by that individual.  
+
+
+<a id="orgc41f657"></a>
+
+### Genotype and phenotype ###
+
+
+<a id="orgbd90d56"></a>
+
+### Fitness ###
+
+The fitness function $f$ is a function mapping from the space of individuals to the reals and is used to compute the individual's fitness from the data returned by the environment.  
+
+> &#x2026; while in natural evolution the fitness of an individual  
+> is defined by its reproductive success (number of offspring), in artificial evo-  
+> lution the fitness of an individual is a function that measures how well that  
+> individual solves a predefined problem. (Floreano & Mattiussi, 2008, pg. 1)  
+
+
+<a id="org70948d6"></a>
+
+### Genetic operators ###
+
+Selection, Mutation, Crossover, &#x2026;  
+
+The operators $o$ are stochastic transformations mapping from the space of pairs of individuals to the space of individuals. The operators produce new solutions from existing ones.  The statistics s are  
+
+
+<a id="org80fddad"></a>
+
+## Main types of EA ##
+
+Genetic algorithms  
+
+Evolution strategies  
+
+Genetic programming  
+
+
+<a id="org853c5d0"></a>
+
+## Advanced techniques ##
+
+-   CMA-ES
+-   Coevolution
+-   Open-ended evolution
+-   Diversity
+-   Developmental encodings: CPPNs, NEAT, HyperNEAT, map-elites, &#x2026;
+-   Genetic regulatory pathways
+
+
+<a id="org6646240"></a>
+
+## Examples ##
+
+-   Karl Sims
+-   Mouret / Nature
+-   Evolution of soft robots
+-   Fahrende Platine
+-   Pfeifer / Vision
+-   NASA Antenna
+-   Radio-receiver FPGA
+-   Modularity (Holland, Jeff Klune?)
+
+-   Neuroevolution, evol. optim. of quadrotor PID params, evolvable hardware fpga, complexity search / evoplast
+
+
+<a id="orgbb34da0"></a>
+
+## The field ##
+
+-   Evolvable hardware, intrinsic evolution, in-silico evolution
+-   Evolutionary robotics
+-   Evol. parameter optimization, hyper-parameter optimization
+-   Neuroevolution
+
+
+<a id="org97200d6"></a>
+
+## Relations to other fields ##
+
+Evolutionary methods are closely linked with several other families of computational methods. For example, EAs can be framed and understood in terms of stochastic optimization, black-box optimization, particle based methods, or policy search by PG or CACLA / EH aka "cling to the best you you've seen and search around there".  
+
+
+<a id="org057922b"></a>
+
+## References ##
+
+-   David B. Fogel, 2000, Evolutionary computation
+-   Mitchell & Tayler, 1999, Evolutionary Computation : An Overview
+-   John Holland, 1975, Adaptation in natural and artificial systems
+-   Ingo Rechenberg, 1973, Evolutionsstrategie
+-   Nolfi & Floreano, 2000, Evolutionary robotics - The biology, intelligence, and technology of self-organizing machines
+-   Floreano & Mattiussi, 2008, Bio-inspired artificial intelligence
+
+
+## Footnotes ##
+
+<sup><a id="fn.1" href="#fnr.1">1</a></sup> Inspired by the theory of natural evolution.
+
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> Website of SIGEVO, the ACM Special Interest Group on Genetic and Evolutionary Computation <http://sig.sigevo.org/index.html/tiki-index.php#&panel1-1>
