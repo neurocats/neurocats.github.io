@@ -140,7 +140,7 @@ network.
 ### Loss & Training
 We have a beautiful computation right now, but in order to really 
 approximate something we need a loss function that tells the network how 
-it has done so far. We will make it easy for us and take the euclidean distance
+it has done so far. We will make it easy for us and take the Euclidean distance
 of label and output.
 
 ```python
@@ -167,7 +167,7 @@ Let's see what we have build:
 ![hidden](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/mlp/mlp_loss.png)
 
 Looks nice, it compares the output with the label and calculates the 
-euclidean distance. It also calculates a mean for two reasons. First, we want
+Euclidean distance. It also calculates a mean for two reasons. First, we want
 to have scalar values for the summary of the loss function. Second, remember
 that the placeholders for `x` and `y` are very flexible and could evaluate 
 multiple instances of the data set in one run.
