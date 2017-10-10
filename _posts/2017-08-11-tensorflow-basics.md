@@ -139,7 +139,7 @@ Tensorflow node value:
   [ 0.  0.  0.]] 
 ```
 
-As Watson would perceive the TensorFlow node is completely different to its 
+Obviously, the TensorFlow node is completely different to its 
 value. Like I mentioned TensorFlow creates an abstract graph object. We can 
 build a computation graph via Python using TensorFlow and can evaluate the 
 nodes value assigned to the current computation in a TensorFlow session. 
