@@ -150,12 +150,12 @@ with tf.Session() as sess:
     writer = tf.summary.FileWriter('./graphs', sess.graph)
 ```
 You may remember that pattern if you studied my last tutorial. We are 
-opening a session and a writer for TensorBoard. However, now comes the tricky
+opening a session and a writer for TensorBoard. However, now we get to the tricky
 part. I want to loop over a testset (numbers between -7 and 7 with stepsize 
 0.001) and summarize the node values from `x^2+1` and `2x` for TensorBoard 
 visualization. The attentive reader will understand that `2x` may not be 
 $ 2x $, because we just called the TensorFlow gradient computation. We don't
-know the outcome yet. We are just hoping that 2x will be the outcome.
+know the outcome yet. We are just hoping that $ 2x $ will be the outcome.
 
 ```python
 # create a tensorflow session
@@ -176,7 +176,7 @@ with tf.Session() as sess:
 # don't forget to close your poor busy writer
 writer.close()
 ```
-As you can see I feed it with numpy objects. I looped over the testset that consists 
+As you can see I feed it with NumPy objects. I looped over the testset that consists 
 of NumPy's arange, activated the nodes I'm most interested in and added the 
 summary to our TensorBoard writer. Note that I multiplied our second 
 parameter for the summary with 1000. Thats just for convenience because a 
