@@ -7,23 +7,26 @@ date:   2017-10-10
 mathjax: true
 hard_wrap: false
 ---
-
-## Table of Contents ##
-
-1.  [Overview](#org6c290b6)
-2.  [Core algorithm](#orgb64c042)
-3.  [Filling in the details](#org787a0f6)
-4.  [Main types of evolutionary algorithms](#org42e8314)
-5.  [Advanced techniques](#org6be0c43)
-6.  [Examples](#org0e5d161)
-7.  [Subfields](#org1d8ba56)
-8.  [Relations to other fields](#orgfce7655)
-9.  [References](#orgfd68185)
-
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0f7f21a">1. Overview</a></li>
+<li><a href="#orgc94ef83">2. Core algorithm</a></li>
+<li><a href="#org138a3e2">3. Filling in the details</a></li>
+<li><a href="#org744d0e6">4. Main types of evolutionary algorithms</a></li>
+<li><a href="#org6e6f918">5. Advanced techniques</a></li>
+<li><a href="#orgace6a6f">6. Examples</a></li>
+<li><a href="#org962fce3">7. Subfields</a></li>
+<li><a href="#orgb45412d">8. Relations to other fields</a></li>
+<li><a href="#orgb690179">9. References</a></li>
+</ul>
+</div>
+</div>
 <span style="color:red">WARNING: I will have to do the graphics on the board.</span>  
 
 
-<a id="org6c290b6"></a>
+<a id="org0f7f21a"></a>
 
 ## Overview ##
 
@@ -32,7 +35,7 @@ Evolutionary algorithms (EAs) are a family of bioinspired algorithms <sup><a id=
 Why do we want to model natural evolution? Because obviously it is a powerful search technique. We would like to replicate this functionality and apply it to our own difficult search and optimization problems.  
 
 
-<a id="orgb64c042"></a>
+<a id="orgc94ef83"></a>
 
 ## Core algorithm ##
 
@@ -56,7 +59,7 @@ with environment $e$, population $p$, fitness $f$, operators $o$ and some genera
 Let's step through the algorithm line by line. Line 2 initializes the components, with p\_ some temporary memory. Line 3 then iterates the following block for a maximum number of iterations. In line 5 an individual is evaluated in the environment and its fitness computed, which is done for each member of the population in line 4. Line 6 creates a new population by sampling pairs of last generation individuals weighted by their fitness in line 7 and computing a new individual from the pair using the genetic operators in line 8. Line 9 updates the overall statistics and line 10 replaces the old population with a new one and jumps back to line 4.  
 
 
-<a id="org787a0f6"></a>
+<a id="org138a3e2"></a>
 
 ## Filling in the details ##
 
@@ -69,10 +72,14 @@ Usually, the fitness cannot be evaluated directly on the genotype but is transla
 The genotypic encoding and the mapping from genotype to phenotype are important parameters of an EA. For example when optimizing a function, the genotype can directly encode the argument at which the function should be evaluated. When tuning a controller in a dynamic simulation, the genotype might just encode the controller's parameters. For evaluation the parameterized controller needs to be simulated on the system for a given amount of time in order to compute a meaningful fitness.  
 
 
+<a id="org8fa6e77"></a>
+
 ### Environment ###
 
 The environment takes an individual $p_i\text{'s}$ phenotype as an input and outputs an episode of data corresponding to that individual. In many cases the returned data will be randomly distributed conditioned on the phenotype input, due to domain complexity, which has to be taken into account be the algorithm. Very similar to policy search.  
 
+
+<a id="org3f05667"></a>
 
 ### Fitness ###
 
@@ -84,12 +91,16 @@ A fitness function $f$ is a function mapping from the combined space of individu
 > individual solves a predefined problem. (Floreano & Mattiussi, 2008, pg. 1)  
 
 
+<a id="orgf711bbf"></a>
+
 ### Genetic operators ###
 
 The operators $o$ are stochastic transformations mapping from the space of $n$-tuples of individuals to the space of individuals. The operators produce new solutions from existing ones.  
 
 The three main operators are *selection*, *mutation*, and *crossover*, also known as recombination. Genetic operators take one or more genomes as input and return a single new genome. The simplest type of EA results from using only selection and mutation. Selection retains a memory of solutions and their fitness, and mutation provides the necessary exploration around the fittest candidates. This work well in many situations but including crossover in between selection and mutation can a) accelerate the search (the real benefit of sexual reproduction) and b) enable *jump* access to regions in configuration space which are unreachable using mutation alone due to local minima. Mutation and combination are local and global exploration functions respectively. Both a) and b) depend on appropriate genotype to phenotype mapping.  
 
+
+<a id="orgb8a103f"></a>
 
 ### Hyperparameters ###
 
@@ -98,7 +109,7 @@ Even a simple EA quickly accumulates many hyperparameters like population size, 
 The main tools for choosing hyperparameters are defaults, empirical estimates, first principles, or optimization. For example, the statistics $s$ can be used to modulate hyperparameters like mutation rate, recombination rules, or fitness weights. In addition, $s$ is the basis for graphical analyses of the experiment.  
 
 
-<a id="org42e8314"></a>
+<a id="org744d0e6"></a>
 
 ## Main types of evolutionary algorithms ##
 
@@ -111,7 +122,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
 *Genetic programming* is slightly different and includes an implicit layer of a developmental encoding. In GP the genome encodes a computation graph and the algorithm explores the space of a family of programs which can bump the expressive power of the genome by oom.  
 
 
-<a id="org6be0c43"></a>
+<a id="org6e6f918"></a>
 
 ## Advanced techniques ##
 
@@ -125,7 +136,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
 -   Genetic regulatory pathways
 
 
-<a id="org0e5d161"></a>
+<a id="orgace6a6f"></a>
 
 ## Examples ##
 
@@ -137,7 +148,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
 -   robot motion recovery, Mouret Nature '16
 -   Evolution of soft robots, Josh Bongard
 -   compensating motion parallax, Pfeifer
--   NASA Antenna
+-   NASA Antenna, <https://en.wikipedia.org/wiki/Evolved_antenna>
 -   FPGA circuit evolution, Thompson
 -   FPGA evolved radio-receiver, ?
 -   Modularity (Clune, Mouret & Lipson), (de Nardi, Holland et al.)
@@ -149,7 +160,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
     controller parameters, intrinsic evolution of FPGA LUT configuration, complexity search / evoplast
 
 
-<a id="org1d8ba56"></a>
+<a id="org962fce3"></a>
 
 ## Subfields ##
 
@@ -160,14 +171,14 @@ There are a few basic types of EAs which are distinguished by the type of genome
 -   Theory of evolution
 
 
-<a id="orgfce7655"></a>
+<a id="orgb45412d"></a>
 
 ## Relations to other fields ##
 
 Evolutionary methods are closely linked with several other families of computational methods. For example, EAs can be framed and understood in terms of stochastic optimization, black-box optimization, particle based methods, or policy search by PG or CACLA / EH aka "cling to the best you you've seen and search around there".  
 
 
-<a id="orgfd68185"></a>
+<a id="orgb690179"></a>
 
 ## References ##
 
