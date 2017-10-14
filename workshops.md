@@ -4,12 +4,10 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Introduction to Evolutionary Algorithms**, 10/10/17  
-Oswald Berthold  
-- **Prioritized Experience Replay**, 11/10/17  
-Florens Greßner  
 - **Neural Turing Machines (NTM)**, 16/10/17  
-Wiebke Günther  
+Wiebke Günther 
+- **Prioritized Experience Replay**, October 2017  
+Florens Greßner  
 - **Trust Region Policy Optimization (TRPO)**, 10/11/17  
 Felix Assion  
 
@@ -18,6 +16,8 @@ Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau
 
 ### Past Workshops:
 
+- **Introduction to Evolutionary Algorithms**, 10/10/17  
+Oswald Berthold  
 - **Policy Gradient Methods**, 27/09/17  
 Felix Assion  
 - **Introduction to the Recurrent Neural Networks (RNN)**, 22/09/17  
