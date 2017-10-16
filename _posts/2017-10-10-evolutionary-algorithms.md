@@ -10,29 +10,28 @@ hard_wrap: false
 
 ## Table of Contents ##
 
-1.  [Overview](#org6c290b6)
-2.  [Core algorithm](#orgb64c042)
-3.  [Filling in the details](#org787a0f6)
-4.  [Main types of evolutionary algorithms](#org42e8314)
-5.  [Advanced techniques](#org6be0c43)
-6.  [Examples](#org0e5d161)
-7.  [Subfields](#org1d8ba56)
-8.  [Relations to other fields](#orgfce7655)
-9.  [References](#orgfd68185)
+1.  [Overview](#orgf9c6886)
+2.  [Core algorithm](#orgfac1f3e)
+3.  [Filling in the details](#orge30efd6)
+4.  [Basic types of evolutionary algorithms](#org1bbad65)
+5.  [Advanced techniques](#orgb3c2dc0)
+6.  [Relations to other fields](#org00dd336)
+7.  [Examples](#org1de2250)
+8.  [References](#org8e01778)
 
 <span style="color:red">WARNING: I will have to do the graphics on the board.</span>  
 
 
-<a id="org6c290b6"></a>
+<a id="orgf9c6886"></a>
 
 ## Overview ##
 
-Evolutionary algorithms (EAs) are a family of bioinspired algorithms <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> that generalize various techniques invented some time between 1930 and the 1960s. EAs have been in widespread use in science, technology, and art since, and are still considered state of the art in many problems in optimization, machine learning, robotics, or artificial life. There is a large community driving to expand the field with >6000 authors counted in 2005 \cite{Cotta2007}. One major conference is GECCO - The Genetic and Evolutionary Computation Conference <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>, with 13 tracks and 180 full papers in 2017.  
+Evolutionary algorithms (EAs) are a family of bioinspired algorithms <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> that generalize various techniques invented some time between 1930 and the 1960s. Since then EAs have been in widespread use in many fields of science, engineering, and art, among others. Evolutionary algorithms are continually present among the state of the art in many problems of optimization, machine learning, robotics, or artificial life. There is a large community that drives the field, with >6000 authors counted in 2005 <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. A major international conference is GECCO - The Genetic and Evolutionary Computation Conference <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>, with 13 tracks and 180 full papers in 2017.  
 
 Why do we want to model natural evolution? Because obviously it is a powerful search technique. We would like to replicate this functionality and apply it to our own difficult search and optimization problems.  
 
 
-<a id="orgb64c042"></a>
+<a id="orgfac1f3e"></a>
 
 ## Core algorithm ##
 
@@ -56,17 +55,15 @@ with environment $e$, population $p$, fitness $f$, operators $o$ and some genera
 Let's step through the algorithm line by line. Line 2 initializes the components, with p\_ some temporary memory. Line 3 then iterates the following block for a maximum number of iterations. In line 5 an individual is evaluated in the environment and its fitness computed, which is done for each member of the population in line 4. Line 6 creates a new population by sampling pairs of last generation individuals weighted by their fitness in line 7 and computing a new individual from the pair using the genetic operators in line 8. Line 9 updates the overall statistics and line 10 replaces the old population with a new one and jumps back to line 4.  
 
 
-<a id="org787a0f6"></a>
+<a id="orge30efd6"></a>
 
 ## Filling in the details ##
 
 Why and how should this work? Let's have a look at it in more detail.  
 
-The *population* is a list of individuals and its size is another important parameter controlling diversity and convergence. *Individuals* represent candidate solutions to the problem we would like to solve. They usually consist of a *genotype* and a *phenotype*. The genotype can be a string of bits, reals, or a more complex structure like a nested list or a program trees.  
+The *population* is a list of individuals and its size is an important parameter controlling *diversity* and search space coverage. *Individuals* represent candidate solutions to the problem we would like to solve. They usually consist of a *genotype* and a *phenotype*. The genotype can be a string of bits, reals, or a more complex structure like a nested list or a program trees.  
 
-Usually, the fitness cannot be evaluated directly on the genotype but is translated first into a corresponding phenotype. The phenotype is then put into the environment of the problem and is evaluated by being allowed an episode of 'doing its thing'.  
-
-The genotypic encoding and the mapping from genotype to phenotype are important parameters of an EA. For example when optimizing a function, the genotype can directly encode the argument at which the function should be evaluated. When tuning a controller in a dynamic simulation, the genotype might just encode the controller's parameters. For evaluation the parameterized controller needs to be simulated on the system for a given amount of time in order to compute a meaningful fitness.  
+Usually, the fitness cannot be evaluated directly on the genotype but is translated first into a corresponding phenotype. The phenotype is then put into the environment of the problem and is evaluated by being allowed an episode of 'doing its thing'. The genotype encoding and genotype to phenotype mapping are another fundamental aspect of EAs. For example in function optimization, the genotype can directly encode the vector arguments at which the function should be evaluated. When tuning the controller of a simulated or real robot, the genotype might encode the controller's parameters. For evaluation the parameterized controller needs to be run on the system for a given amount of time in order to compute a meaningful fitness (policy search). A parameterized policy can be made even more expressive by introducing generative mappings, for example by interpreting the genome as a program, as a parameterized *construction rule* for policies (CPPNs) or by encoding synaptic plasticity rules in a neural network instead of synaptic weights directly.  
 
 
 ### Environment ###
@@ -98,9 +95,9 @@ Even a simple EA quickly accumulates many hyperparameters like population size, 
 The main tools for choosing hyperparameters are defaults, empirical estimates, first principles, or optimization. For example, the statistics $s$ can be used to modulate hyperparameters like mutation rate, recombination rules, or fitness weights. In addition, $s$ is the basis for graphical analyses of the experiment.  
 
 
-<a id="org42e8314"></a>
+<a id="org1bbad65"></a>
 
-## Main types of evolutionary algorithms ##
+## Basic types of evolutionary algorithms ##
 
 There are a few basic types of EAs which are distinguished by the type of genome they use.  
 
@@ -111,76 +108,88 @@ There are a few basic types of EAs which are distinguished by the type of genome
 *Genetic programming* is slightly different and includes an implicit layer of a developmental encoding. In GP the genome encodes a computation graph and the algorithm explores the space of a family of programs which can bump the expressive power of the genome by oom.  
 
 
-<a id="org6be0c43"></a>
+<a id="orgb3c2dc0"></a>
 
 ## Advanced techniques ##
 
--   CMA-ES
--   Coevolution
+Non-exhaustive list of some advanced topics and techniques in evolutionary computation.  
+
 -   Open-ended evolution
+-   Coevolution
 -   Diversity
--   Developmental encodings: CPPNs, NEAT, HyperNEAT, map-elites, &#x2026;
 -   Modularity
--   Distributed representation and genetic drift
+-   Probabilistic genome encoding, for example CMA-ES
+-   Developmental encoding, for example CPPNs, NEAT, HyperNEAT, map-elites, &#x2026;
 -   Genetic regulatory pathways
+-   Distributed representation, genetic drift
 
+and some particularly interesting subfields within evolutionary computation  
 
-<a id="org0e5d161"></a>
-
-## Examples ##
-
--   pathnet, fernando (!!!)
--   blind watchmaker, Dawkins
--   creatures, Karl Sims
--   picbreeder, Stanley
--   evolving compressed weights, Koutnik et al.
--   robot motion recovery, Mouret Nature '16
--   Evolution of soft robots, Josh Bongard
--   compensating motion parallax, Pfeifer
--   NASA Antenna
--   FPGA circuit evolution, Thompson
--   FPGA evolved radio-receiver, ?
--   Modularity (Clune, Mouret & Lipson), (de Nardi, Holland et al.)
--   Self-replicating robot, Fumiya Iida
--   Evolved lego bridge, Bonabeau & &#x2026;
--   Fahrende Platine, Ferry
-
--   Neuroevolution, evolutionary optimization of quadrotor PID  
-    controller parameters, intrinsic evolution of FPGA LUT configuration, complexity search / evoplast
-
-
-<a id="org1d8ba56"></a>
-
-## Subfields ##
-
--   Evolvable hardware, intrinsic evolution, in-silico evolution
 -   Evolutionary robotics
--   Evol. parameter optimization, hyper-parameter optimization
+-   Evolvable hardware, intrinsic evolution, in-silico evolution
+-   Black-box optimization, e.g. hyperparameters
 -   Neuroevolution
 -   Theory of evolution
 
 
-<a id="orgfce7655"></a>
+<a id="org00dd336"></a>
 
 ## Relations to other fields ##
 
-Evolutionary methods are closely linked with several other families of computational methods. For example, EAs can be framed and understood in terms of stochastic optimization, black-box optimization, particle based methods, or policy search by PG or CACLA / EH aka "cling to the best you you've seen and search around there".  
+Evolutionary methods are closely related with other computational methods, for example, EAs can be framed and understood in terms of stochastic optimization, black-box optimization, particle based methods, or policy search.  
 
 
-<a id="orgfd68185"></a>
+<a id="org1de2250"></a>
+
+## Examples ##
+
+A few examples of current and classic applied evolutionary methods  
+
+-   Fernando and others, 2017, PathNet: Evolution Channels Gradient Descent in Super Neural Networks, <https://arxiv.org/abs/1701.08734>, <https://www.youtube.com/watch?v=tmQaj0ZqmiE>
+-   Lipson, Bongard and others, 2016, Evolving Swimming Soft-Bodied Creatures,  
+    <https://www.youtube.com/watch?v=4ZqdvYrZ3ro>, Kriegmann and others,  
+    2017, The Evolution of Development in Soft Robots, <https://www.youtube.com/watch?v=gXf2Chu4L9A>
+-   Cully & other, 2015, Robots that can adapt like animals (Nature  
+    cover article), <https://www.nature.com/nature/journal/v521/n7553/full/nature14422.html>, <https://www.youtube.com/watch?v=T-c17RKh3uE>
+-   Tonelli and Mouret, 2013, On the Relationships between Generative Encodings, Regularity, and Learning Abilities when Evolving Plastic Artificial Neural Networks, <10.1371/journal.pone.0079138>
+-   Clune, Mouret & Lipson, 2012, The evolutionary origins of  
+    modularity, <https://arxiv.org/abs/1207.2743>,
+-   Koutnik and others, 2010, Evolving neural networks in compressed weight space, <https://dl.acm.org/citation.cfm?id=1830596>, <https://www.lri.fr/~hansen/proceedings/2013/GECCO/proceedings/p1061.pdf>
+-   Hornby and other, 2006, Automated Antenna Design with Evolutionary  
+    Algorithms,  
+    <http://alglobus.net/NASAwork/papers/Space2006Antenna.pdf>, NASA antenna <https://en.wikipedia.org/wiki/Evolved_antenna>
+-   de Nardi, Holland and others, 2006, Evolution of Neural Networks  
+    for Helicopter Control: Why Modularity Matters, <http://julian.togelius.com/DeNardi2006Evolution.pdf>
+-   Bird and Layzell, 2002, The Evolved Radio and its Implications for Modelling the Evolution of Novel Sensors, <https://people.duke.edu/~ng46/topics/evolved-radio.pdf>, FPGA evolved radio-receiver, ?
+-   Lichtensteiger and Eggenberger, 1999, Evolving the Morphology of a  
+    Compound Eye on a Robot, <https://www.cs.cmu.edu/~motionplanning/papers/sbp_papers/integrated2/lichtensteiger_compound_eye.pdf>,
+-   Funes and Pollack, 1997, Computer Evolution of Buildable Objects, <http://www.demo.cs.brandeis.edu/papers/other/cs-97-191.html>
+-   Thompson, 1995, An evolved circuit, intrinsic in silicon, entwined  
+    with physics, <https://link.springer.com/chapter/10.1007/3-540-63173-9_61>, FPGA circuit evolution, Thompson
+-   Karl Sims, 1994, Evolved Virtual Creatures, Evolution Simulation, <https://www.youtube.com/watch?v=JBgG_VSP7f8>
+-   Stanley & others, Picbreeder: collaborative evolutionary art, <http://picbreeder.org/>
+-   Dawkins, Blind watchmaker, <http://www.dailymotion.com/video/x1jprj5>
+-   Self-replicating robot, Fumiya Iida, <http://www.cam.ac.uk/research/discussion/opinion-how-we-built-a-robot-that-can-evolve-and-why-it-wont-take-over-the-world>
+
+
+<a id="org8e01778"></a>
 
 ## References ##
 
+In addition to the papers and examples above here's additional reading  
+
+-   Floreano & Mattiussi, 2008, Bio-inspired artificial intelligence
+-   Nolfi & Floreano, 2000, Evolutionary robotics - The biology, intelligence, and technology of self-organizing machines
 -   David B. Fogel, 2000, Evolutionary computation
 -   Mitchell & Tayler, 1999, Evolutionary Computation : An Overview
 -   John Holland, 1975, Adaptation in natural and artificial systems
 -   Ingo Rechenberg, 1973, Evolutionsstrategie
--   Nolfi & Floreano, 2000, Evolutionary robotics - The biology, intelligence, and technology of self-organizing machines
--   Floreano & Mattiussi, 2008, Bio-inspired artificial intelligence
 
 
 ## Footnotes ##
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Inspired by the theory of natural evolution.
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> Website of SIGEVO, the ACM Special Interest Group on Genetic and Evolutionary Computation <http://sig.sigevo.org/index.html/tiki-index.php#&panel1-1>
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> Cotta and Merelo, 2007, Where is evolutionary computation going? A temporal analysis of the EC community, <https://doi.org/10.1007/s10710-007-9031-0>
+
+<sup><a id="fn.3" href="#fnr.3">3</a></sup> Website of SIGEVO, the ACM Special Interest Group on Genetic and Evolutionary Computation <http://sig.sigevo.org/index.html/tiki-index.php#&panel1-1>
