@@ -10,19 +10,19 @@ hard_wrap: false
 
 ## Table of Contents ##
 
-1.  [Overview](#orgf9c6886)
-2.  [Core algorithm](#orgfac1f3e)
-3.  [Filling in the details](#orge30efd6)
-4.  [Basic types of evolutionary algorithms](#org1bbad65)
-5.  [Advanced techniques](#orgb3c2dc0)
-6.  [Relations to other fields](#org00dd336)
-7.  [Examples](#org1de2250)
-8.  [References](#org8e01778)
+1.  [Overview](#orgcabe70e)
+2.  [Core algorithm](#org41fbfe2)
+3.  [Filling in the details](#org5209254)
+4.  [Basic types of evolutionary algorithms](#org9031262)
+5.  [Advanced techniques](#org0e6ea8f)
+6.  [Relations to other fields](#orgb95580f)
+7.  [Examples](#org1bf579d)
+8.  [References](#org885094c)
 
 <span style="color:red">WARNING: I will have to do the graphics on the board.</span>  
 
 
-<a id="orgf9c6886"></a>
+<a id="orgcabe70e"></a>
 
 ## Overview ##
 
@@ -31,7 +31,7 @@ Evolutionary algorithms (EAs) are a family of bioinspired algorithms <sup><a id=
 Why do we want to model natural evolution? Because obviously it is a powerful search technique. We would like to replicate this functionality and apply it to our own difficult search and optimization problems.  
 
 
-<a id="orgfac1f3e"></a>
+<a id="org41fbfe2"></a>
 
 ## Core algorithm ##
 
@@ -55,7 +55,7 @@ with environment $e$, population $p$, fitness $f$, operators $o$ and some genera
 Let's step through the algorithm line by line. Line 2 initializes the components, with p\_ some temporary memory. Line 3 then iterates the following block for a maximum number of iterations. In line 5 an individual is evaluated in the environment and its fitness computed, which is done for each member of the population in line 4. Line 6 creates a new population by sampling pairs of last generation individuals weighted by their fitness in line 7 and computing a new individual from the pair using the genetic operators in line 8. Line 9 updates the overall statistics and line 10 replaces the old population with a new one and jumps back to line 4.  
 
 
-<a id="orge30efd6"></a>
+<a id="org5209254"></a>
 
 ## Filling in the details ##
 
@@ -95,7 +95,7 @@ Even a simple EA quickly accumulates many hyperparameters like population size, 
 The main tools for choosing hyperparameters are defaults, empirical estimates, first principles, or optimization. For example, the statistics $s$ can be used to modulate hyperparameters like mutation rate, recombination rules, or fitness weights. In addition, $s$ is the basis for graphical analyses of the experiment.  
 
 
-<a id="org1bbad65"></a>
+<a id="org9031262"></a>
 
 ## Basic types of evolutionary algorithms ##
 
@@ -108,7 +108,7 @@ There are a few basic types of EAs which are distinguished by the type of genome
 *Genetic programming* is slightly different and includes an implicit layer of a developmental encoding. In GP the genome encodes a computation graph and the algorithm explores the space of a family of programs which can bump the expressive power of the genome by oom.  
 
 
-<a id="orgb3c2dc0"></a>
+<a id="org0e6ea8f"></a>
 
 ## Advanced techniques ##
 
@@ -132,14 +132,14 @@ and some particularly interesting subfields within evolutionary computation
 -   Theory of evolution
 
 
-<a id="org00dd336"></a>
+<a id="orgb95580f"></a>
 
 ## Relations to other fields ##
 
 Evolutionary methods are closely related with other computational methods, for example, EAs can be framed and understood in terms of stochastic optimization, black-box optimization, particle based methods, or policy search.  
 
 
-<a id="org1de2250"></a>
+<a id="org1bf579d"></a>
 
 ## Examples ##
 
@@ -172,7 +172,7 @@ A few examples of current and classic applied evolutionary methods
 -   Self-replicating robot, Fumiya Iida, <http://www.cam.ac.uk/research/discussion/opinion-how-we-built-a-robot-that-can-evolve-and-why-it-wont-take-over-the-world>
 
 
-<a id="org8e01778"></a>
+<a id="org885094c"></a>
 
 ## References ##
 
