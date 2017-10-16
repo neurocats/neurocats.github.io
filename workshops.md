@@ -4,42 +4,33 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Prioritized Experience Replay** by Florens Greßner  
-Research group  
-10/10/17
-- **Introduction to Evolutionary Algorithms** by Oswald Berthold  
-Development group  
-11/10/17
-- **Neural Turing Machines** by Wiebke Günther  
-Research group & Development group  
-October 2017
+- **Neural Turing Machines (NTM)**, 16/10/17  
+Wiebke Günther 
+- **Prioritized Experience Replay**, October 2017  
+Florens Greßner  
+- **Trust Region Policy Optimization (TRPO)**, 10/11/17  
+Felix Assion  
 
 
 Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau@neurocat.ai).
 
 ### Past Workshops:
 
-- **Policy Gradient Methods** by Felix Assion  
-Research & Development group  
-27/09/17
-- **Introduction to the Recurrent Neural Networks** by Wiebke Günther  
-Research & Development group  
-22/09/17
-- **Introduction to Smart Contracts** by Frank Selensky  
-Research & Development group  
-18/09/17
-- **Introduction to Blockchain Technology** by Frank Selensky  
-Research, Development & Management group  
-12/09/17
-- **Introduction to GAN Networks** by Oswald Berthold  
-Research, Development group  
-05/09/17
-- **Introduction to Bayesian Networks** by Oswald Berthold  
-Research, Development group  
-29/08/17
-- **Introduction to Reinforcement Learning** by Felix Assion  
-Research, Development group  
-18/08/17
-- **Introduction to Tensorflow** by Florens Greßner  
-Research & Development group  
-17/08/17
+- **Introduction to Evolutionary Algorithms**, 10/10/17  
+Oswald Berthold  
+- **Policy Gradient Methods**, 27/09/17  
+Felix Assion  
+- **Introduction to the Recurrent Neural Networks (RNN)**, 22/09/17  
+Wiebke Günther  
+- **Introduction to Smart Contracts**, 18/09/17  
+Frank Selensky   
+- **Introduction to Blockchain Technology**, 12/09/17  
+Frank Selensky  
+- **Introduction to GAN Networks**, 05/09/17  
+Oswald Berthold  
+- **Introduction to Bayesian Networks**, 29/08/17  
+Oswald Berthold  
+- **Introduction to Reinforcement Learning (RL)**, 18/08/17  
+Felix Assion  
+- **Introduction to Tensorflow**, 17/08/17  
+Florens Greßner  

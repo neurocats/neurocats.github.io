@@ -2,43 +2,42 @@
 layout: post
 comments: true
 title:  "Introduction to Tensorflow - 01 Basics"
-excerpt: "Florens Greßner - While giving an overview for python, numpy and 
-tensorflow I want to create a basic understanding of tensorflows graph 
+excerpt: "Florens Greßner - While giving an overview of Python, NumPy and 
+TensorFlow I want to create a basic understanding of TensorFlows graph 
 representation for the reader."
 date:   2017-08-11
 mathjax: true
 ---
 
-# Tensorflow basics
 
 ## Introduction
-We will explore the different approaches on programming python, numpy and 
-tensorflow. This won't be a beginner tutorial that talks about variable 
+We will explore the different approaches to programming using Python, NumPy and 
+TensorFlow. This won't be a beginner tutorial that talks about variable 
 initialization, loops, function, classes, library calls and saying hello to a
 world.
 
-I want to give you a framework on how to think about the different approaches 
+I want to give you a framework for how to think about the different approaches 
 such that you can use the provided tools on your own.
 
-Learn how to read documentations and finding all tools needed. Think
+Learn how to read documentations and find all tools needed. Think
 about your problems and search for the gadgets that are needed for 
-solving the problem. Don't think about your known tools and try to figure 
+solving the problem. Don't only think about the tools that you already know and try to figure 
 out a solution with static knowledge. You may be successful upto a certain 
-point. But your code can never be efficient and most importantly - beautiful. 
+point but your code can never be efficient and most importantly - beautiful. 
 **Own your code!**  
 Please refer to the following documentations:
 - [python docs](https://docs.python.org/3/)
 - [numpy docs](https://docs.scipy.org/doc/)
 - [tensorflow docs](https://www.tensorflow.org/api_docs/python/)
 
-## Python, Numpy, Tensorflow?
+## Python, NumPy, TensorFlow?
 ![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/python-logo.png)
 ![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/numpy.jpg)
 ![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/tensorflow.png)
 
-We first have to find out what you can use for mathematical programming 
+We first have to find out what kind of tools and supports you have for mathematical programming 
 especially for building AI Software.   
-What is used for which purpose? Which Problems are more efficiently solved 
+What is used for which purpose? Which problems are more efficiently solved 
 with which tool?
 
 ### Python
@@ -46,7 +45,7 @@ with which tool?
 **integrate systems** more effectively. 
 **- python.org**
 
-This just means that **python** is
+This just means that **Python** is
 - multi-purpose, (especially cross-platform) and
 - can easily combine different systems.
 
@@ -55,24 +54,24 @@ efficient way. It is slow and hard to parallelize, because it doesn't live
 deep inside the system like e.g. C++. However it is elegant and easy to 
 use.
 
-### Numpy
+### NumPy
 > NumPy is the fundamental **package** for scientific computing with Python. 
 **- numpy.org**
 
 Python is loved by the scientific community because of the variety of 
-scientific computing packages e.g. **numpy**, scipy. This gives the 
-developer the opportunity of mathematical tools e.g. matrix computation, in 
-the elegant style of python.
+scientific computing packages e.g. **NumPy** and SciPy. This gives the 
+developer the availability of mathematical tools, e.g. matrix computation, in 
+the elegant style of Python.
  
 
-### Tensorflow
-> An open-source software **library** for Machine Intelligence.
+### TensorFlow
+> An open-source software **library** for machine intelligence.
 **- tensorflow.org**
 
-Tensorflow is a C++ library. In detail think of tensorflow as an API. With a
-python interface. It is fast, can give you access to GPU computation and can 
-parallelize computations. Considering tensorflow has a more general 
-respresentation of a computation. It is able to compute a symbolical 
+Tensorflow is a C++ library. In more detail, think of TensorFlow as an API. With a
+Python interface. It is fast, it can give you access to GPU computation and it can 
+parallelize computations. TensorFlow has a more general 
+respresentation of computations. Thus it is able to compute a symbolical 
 derivative of a mathematical function and knows which part of the 
 computation can work in parallel. 
 
@@ -80,32 +79,32 @@ Have a look at the [Whitepaper](http://download.tensorflow.org/paper/whitepaper2
 if you can't wait to know how all that's done.
 
 ### Conclusion
-Basically what we are doing is using pythons integrating 
-systems by integrating the use of tensorflow(via python API). We are 
-communicating with the GPU over tensorflow controlled by python. We are 
-combining easy to use python with fast but complicated written C++ and taking 
-the best properties respectively.
+Basically what we are doing is using Pythons ability to integrate
+systems by integrating the use of TensorFlow (via Python API). We are 
+communicating with the GPU over TensorFlow controlled by Python. We are 
+combining easy to use Python with fast but complicated written C++ and taking 
+the best properties from both worlds.
 
-## Tensorflow philosophy
-I will give an overview how tensorflow calculates and will give a practical 
-example of the concrete difference to pure python in the next section.
+## TensorFlow Philosophy
+I will give an overview of how TensorFlow works and I will give a practical 
+example of the concrete difference to pure Python in the next section.
 
-### It's all about computation graphs
-One field in theoretical computer science focus on representing mathematical 
-operations in a graph. Tensorflow is a tool where you can build 
-computation graphs and provides functions like derivation that makes the use
-of an formula easier. Tensorflow provides nodes that you can feed with numpy 
+### It's all about Computation Graphs
+One field in theoretical computer science focuses on representing mathematical 
+operations in the form of a graph. TensorFlow is a tool for building 
+computation graphs and provides functions like differentiation that make the use
+of a formula easier. TensorFlow provides nodes that you can feed with NumPy 
 objects and gives the possibility to evaluate each nodes value given the 
 input (or constant).
 
-Never forget. You are building a graph. When you want to evaluate a variable
-(graph node) you can only do it in a so called 'tensorflow session'. Outside
+Never forget: You are building a graph. When you want to evaluate a variable
+(graph node) you can only do it in a so called 'TensorFlow session'. Outside
 such a session you will just see an abstract graph object that lives in your
 desired architecture.
 
-### Graph or not a graph
+### Graph or not a Graph
 You will always need **Tensors/Arrays**. So let's start with the smallest 
-non-trivial example: A tensor of rank 2; Or: A Matrix.
+non-trivial example: A tensor of rank 2 or: A Matrix.
 
 ```python
 import numpy as np
@@ -140,14 +139,14 @@ Tensorflow node value:
   [ 0.  0.  0.]] 
 ```
 
-As Watson would perceive the Tensorflow node is completely different to its 
-value. Like I mentioned tensorflow creates a abstract graph object. We can 
-build a computation graph via python using tensorflow and can evaluate the 
-nodes value assigned to the current computation in a tensorflow session. 
-- `Tensorflow node` is a representation of the abstract 
+Obviously, the TensorFlow node is completely different to its 
+value. Like I mentioned TensorFlow creates an abstract graph object. We can 
+build a computation graph via Python using TensorFlow and can evaluate the 
+nodes value assigned to the current computation in a TensorFlow session. 
+- `TensorFlow node` is a representation of the abstract 
 node of the computation graph that was build at the initialization step.  
-- `Tensorflow node value` is the value of the node that 
-was assigned to this computation. It was evaluated in a tensorflow session.
+- `TensorFlow node value` is the value of the node that 
+was assigned to this computation. It was evaluated in a TensorFlow session.
 
 To make that clear please analyse the outcome of the next example. We will 
 now add up 2 matrices.
@@ -223,11 +222,11 @@ tfMatrix2 = tf.constant(npMatrix2, dtype=tf.float32, name="tfMatrix2")
 # Sum
 tfResult = tf.add(tfMatrix, tfMatrix2, name="tfResult")
 ```
-Notice that every seemingly variable initialization step is a birth of a 
-node in the computation graph. You feed it with the properties/parameter, 
+Notice that what seemingly is just an initialization step for a variable is also the birth of a 
+node in the computation graph, that you feed with the properties/parameters, 
 even with a name.
 
-2. Execute the actual computation in a tensorflow session.
+2. Execute the actual computation in a TensorFlow session.
 ```python
 # Starting the session
 with tf.Session() as sess:
@@ -245,15 +244,15 @@ writer.close()
 Computation graph:  
 ![ex_II](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/ex_II.png)
 
-As seen in the picture of the computation graph you have created 3 nodes 
-(summand, summand, sum) if you ignore the `init` node . We can evaluate every 
-assigned value of a node given the current computation. Tensorflow will 
-calculate it via C++ API, not with native python like in the numpy case.
+As shown in the image of the computation graph you have created 3 nodes 
+(summand, summand, sum) if you ignore the `init` node. We can evaluate every 
+assigned value of a node given the current computation. TensorFlow will 
+calculate it via C++ API, not with native Python like in the NumPy case.
 
-I created that graph with tensorboard. Its a tool that converts
-so called tensorflow summaries into a visualization. With that there arise 
-more new definitions like namescoping, building summaries etc. I will 
-elaborate on that in the next tutorial while I show you how tensorflow can 
-compute symbolic derivations, impossible for pure python.
+I created that graph with TensorBoard which is a tool that converts
+so called TensorFlow summaries into a visualization. With that there arise 
+more new concepts like namescoping, building summaries etc. I will 
+elaborate on that in the next tutorial while I show you how TensorFlow can 
+compute symbolic derivatives, impossible for pure Python.
 
 Have a great code. See you in the next tutorial.
