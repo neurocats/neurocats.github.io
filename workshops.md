@@ -4,8 +4,6 @@ title: Workshops
 permalink: /workshops/
 ---
 
-- **Neural Turing Machines (NTM)**, 16/10/17  
-Wiebke Günther 
 - **Prioritized Experience Replay**, October 2017  
 Florens Greßner  
 - **Trust Region Policy Optimization (TRPO)**, 10/11/17  
@@ -16,6 +14,8 @@ Feel free to Sign in for a workshop by contacting [miau@neurocat.ai](mailto:miau
 
 ### Past Workshops:
 
+- **Neural Turing Machines (NTM)**, 16/10/17  
+Wiebke Günther 
 - **Introduction to Evolutionary Algorithms**, 10/10/17  
 Oswald Berthold  
 - **Policy Gradient Methods**, 27/09/17  
