@@ -430,6 +430,16 @@ a:visited { color: #205caa; }
   background-color: #FFFFFF;
 }
 
+@font-face {
+  font-family: neotech;
+  src: url('fonts/neotech.woff') ;
+format('opentype');
+}
+@font-face {
+  font-family: Haboro;
+  src: url('fonts/HaboroSoft-NorReg.ttf') ;
+}
+
 /**********************************************************************************************************************/
 /* Section A - Menu */
 /**********************************************************************************************************************/
