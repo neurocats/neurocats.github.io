@@ -31,9 +31,9 @@ Please refer to the following documentations:
 - [tensorflow docs](https://www.tensorflow.org/api_docs/python/)
 
 ## Python, NumPy, TensorFlow?
-![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/python-logo.png)
-![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/numpy.jpg)
-![python](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/tensorflow.png)
+![python](https://raw.githubusercontent.com/neurocats/neurocats.github.io/master/assets/tensorflow/python-logo.png)
+![python](https://raw.githubusercontent.com/neurocats/neurocats.github.io/master/assets/tensorflow/numpy.jpg)
+![python](https://raw.githubusercontent.com/neurocats/neurocats.github.io/master/assets/tensorflow/tensorflow.png)
 
 We first have to find out what kind of tools and supports you have for mathematical programming 
 especially for building AI Software.   
