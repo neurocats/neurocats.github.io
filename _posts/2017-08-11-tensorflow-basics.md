@@ -242,7 +242,7 @@ with tf.Session() as sess:
 writer.close()
 ```
 Computation graph:  
-![ex_II](https://raw.githubusercontent.com/f37/f37.github.io/master/assets/tensorflow/ex_II.png)
+![ex_II](https://raw.githubusercontent.com/neurocats/neurocats.github.io/master/assets/tensorflow/ex_II.png)
 
 As shown in the image of the computation graph you have created 3 nodes 
 (summand, summand, sum) if you ignore the `init` node. We can evaluate every 
